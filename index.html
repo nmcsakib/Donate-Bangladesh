@@ -9,10 +9,11 @@
 <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
 </head>
-<body class="bg-[#f9f7f3] h-screen">
+<body class="bg-[#f9f7f3] pt-20">
     <!-- navbar -->
-     <header class="container mx-auto py-6 backdrop-blur-sm"> 
-        <nav class="navbar">
+     <header class="fixed top-0 z-10 w-full">
+      <section class="container mx-auto py-6 px-20 backdrop-blur-sm"> 
+        <nav class="navbar ">
   <div class="navbar-start">
     <button class="btn bg-[#B4F461] px-6 py-4">Blog</button>
   </div>
@@ -22,7 +23,7 @@
   </div>
   <div class="navbar-end">
   <img src="/assets/coin.png" alt="coin">
-  <p class="text-3xl font-bold">5500</p>
+  <p id="balance" class="text-3xl font-bold pl-2"> 5500</p>
   </div>
 </nav>
 <section class="flex justify-center items-center mt-10">
@@ -31,16 +32,72 @@
         <button class="btn px-6 py-4 btn-lg bg-white btn-outline">History</button>
     </div>
 </section>
+     </section>
      </header>
 
      
-    <main class="container mx-auto">
-        <h1 class="text-7xl">Hello World</h1>
-        <button class="btn btn-primary">SUBMIT</button>
+    <!-- main content -->
+     <main class="bg-white rounded-lg pt-10">
+      <section class="container mx-auto flex flex-col items-center gap-3 px-20 pt-20">
+        
+          <!-- Card -->
+      
+<div class="card h-[400px] flex flex-row bg-base-100 shadow-sm p-6 gap-8 border border-gray-300 my-10">
+  <figure class="w-1/2 rounded-lg">
+    <img class="w-full"
+      src="/assets/noakhali.png"
+      alt="Movie" />
+  </figure>
+  <div class="flex-1 flex flex-col gap-5">
+    <div class="btn  w-1/4"> <img src="/assets/coin.png" alt=""><span id="donation-amount">0</span> BDT</div>
+    <h2 class="card-title"> Donate for Flood at Noakhali, Bangladesh</h2>
+    <p class="font-thin"> The recent floods in Noakhali have caused significant damage to homes  infrastructure. Your donation will help provide essential supplies and  to those affected by this disaster. Every contribution, big or small, makes  difference. Please join us in supporting the relief efforts and making a positive impact on the lives of those in need.</p>
+    <div class=" flex flex-col">
+      <input id="donation-value" type="number" placeholder="Type Amount Here" class="input w-full mb-3 focus:outline-none" />
+      <button onclick="updateBalance(this)" class="btn bg-[#B4F461]">Donate</button>
+    </div>
+  </div>
+</div>
+<div class="card h-[400px] flex flex-row bg-base-100 shadow-sm p-6 gap-8 border border-gray-300 my-10">
+  <figure class="w-1/2 rounded-lg">
+    <img class="w-full"
+      src="/assets/feni.png"
+      alt="Movie" />
+  </figure>
+  <div class="flex-1 flex flex-col gap-5">
+    <div class="btn w-1/4"> <img src="/assets/coin.png" alt=""><span id="donation-amount">0</span>  BDT</div>
+    <h2 class="card-title"> Donate for Flood at Feni, Bangladesh</h2>
+    <p class="font-thin"> The recent floods in Feni have caused significant damage to homes  infrastructure. Your donation will help provide essential supplies and  to those affected by this disaster. Every contribution, big or small, makes  difference. Please join us in supporting the relief efforts and making a positive impact on the lives of those in need.</p>
+    <div class=" flex flex-col">
+      <input id="donation-value" type="number" placeholder="Type Amount Here" class="input w-full mb-3 focus:outline-none" />
+      <button  onclick="updateBalance(this)"  class="btn bg-[#B4F461]">Donate</button>
+    </div>
+  </div>
+</div>
+<div class="card h-[400px] flex flex-row bg-base-100 shadow-sm p-6 gap-8 border border-gray-300 my-10">
+  <figure class="w-1/2 rounded-lg">
+    <img class="w-full"
+      src="/assets/feni.png"
+      alt="Movie" />
+  </figure>
+  <div class="flex-1 flex flex-col gap-5">
+    <div class="btn w-1/4"> <img src="/assets/coin.png" alt=""><span id="donation-amount">0</span>  BDT</div>
+    <h2 class="card-title"> Donate for Flood at Noakhali, Bangladesh</h2>
+    <p class="font-thin"> The recent floods in Noakhali have caused significant damage to homes  infrastructure. Your donation will help provide essential supplies and  to those affected by this disaster. Every contribution, big or small, makes  difference. Please join us in supporting the relief efforts and making a positive impact on the lives of those in need.</p>
+    <div class=" flex flex-col">
+      <input id="donation-value" type="number" placeholder="Type Amount Here" class="input w-full mb-3 focus:outline-none" />
+      <button  onclick="updateBalance(this)"  class="btn bg-[#B4F461]">Donate</button>
+    </div>
+  </div>
+</div>
 
-    </main>
+
+
+    </section>
+     </main>
 
     
 </body>
+<script src="/src/script.js"></script>
 
 </html>
