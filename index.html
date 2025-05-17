@@ -28,8 +28,8 @@
 </nav>
 <section class="flex justify-center items-center mt-10">
     <div>
-        <button class="btn px-6 py-4 btn-lg bg-[#B4F461]">Donation</button>
-        <button class="btn px-6 py-4 btn-lg bg-white btn-outline">History</button>
+        <button onclick="showCards()" class="btn px-6 py-4 btn-lg bg-[#B4F461]">Donation</button>
+        <button onclick="showHistory()" class="btn px-6 py-4 btn-lg bg-white btn-outline">History</button>
     </div>
 </section>
      </section>
@@ -37,8 +37,9 @@
 
      
     <!-- main content -->
-     <main class="bg-white rounded-lg pt-10">
-      <section class="container mx-auto flex flex-col items-center gap-3 px-20 pt-20">
+     <main class="bg-white rounded-lg pt-10 ">
+      <!-- Card section -->
+      <section id="card-container" class="container lg: mx-auto flex flex-col items-center gap-3 px-20 pt-20">
         
           <!-- Card -->
       
@@ -50,7 +51,7 @@
   </figure>
   <div class="flex-1 flex flex-col gap-5">
     <div class="btn  w-1/4"> <img src="/assets/coin.png" alt=""><span id="donation-amount">0</span> BDT</div>
-    <h2 class="card-title"> Donate for Flood at Noakhali, Bangladesh</h2>
+    <h2 class="card-title"> Donate for Flood at  <span class="city">Barishal</span>, Bangladesh</h2>
     <p class="font-thin"> The recent floods in Noakhali have caused significant damage to homes  infrastructure. Your donation will help provide essential supplies and  to those affected by this disaster. Every contribution, big or small, makes  difference. Please join us in supporting the relief efforts and making a positive impact on the lives of those in need.</p>
     <div class=" flex flex-col">
       <input id="donation-value" type="number" placeholder="Type Amount Here" class="input w-full mb-3 focus:outline-none" />
@@ -66,7 +67,7 @@
   </figure>
   <div class="flex-1 flex flex-col gap-5">
     <div class="btn w-1/4"> <img src="/assets/coin.png" alt=""><span id="donation-amount">0</span>  BDT</div>
-    <h2 class="card-title"> Donate for Flood at Feni, Bangladesh</h2>
+    <h2 class="card-title"> Donate for Flood at <span class="city">Feni</span>, Bangladesh</h2>
     <p class="font-thin"> The recent floods in Feni have caused significant damage to homes  infrastructure. Your donation will help provide essential supplies and  to those affected by this disaster. Every contribution, big or small, makes  difference. Please join us in supporting the relief efforts and making a positive impact on the lives of those in need.</p>
     <div class=" flex flex-col">
       <input id="donation-value" type="number" placeholder="Type Amount Here" class="input w-full mb-3 focus:outline-none" />
@@ -82,7 +83,7 @@
   </figure>
   <div class="flex-1 flex flex-col gap-5">
     <div class="btn w-1/4"> <img src="/assets/coin.png" alt=""><span id="donation-amount">0</span>  BDT</div>
-    <h2 class="card-title"> Donate for Flood at Noakhali, Bangladesh</h2>
+    <h2 class="card-title"> Donate for Flood at  <span class="city">Noakhali</span>, Bangladesh</h2>
     <p class="font-thin"> The recent floods in Noakhali have caused significant damage to homes  infrastructure. Your donation will help provide essential supplies and  to those affected by this disaster. Every contribution, big or small, makes  difference. Please join us in supporting the relief efforts and making a positive impact on the lives of those in need.</p>
     <div class=" flex flex-col">
       <input id="donation-value" type="number" placeholder="Type Amount Here" class="input w-full mb-3 focus:outline-none" />
@@ -94,6 +95,26 @@
 
 
     </section>
+
+    <!-- History section -->
+
+    <section id="history-container" class="container hidden mx-auto flex-col  gap-3 px-20 pt-20">
+      <div id="no-donation" class="card border border-gray-300 shadow-sm p-6 gap-2 my-10">
+        <h4 class="text-xl font-bold">No donation! </h4>
+      </div>
+    </section>
+
+    <!-- modal -->
+<dialog id="my_modal_2" class="modal">
+  <div class="modal-box flex flex-col items-center justify-center gap-4">
+    <h3 class="text-lg font-bold">Congratulations</h3>
+    <p class="py-4">You donated <span id="donatedValue"></span> Taka!</p>
+  </div>
+  <form method="dialog" class="modal-backdrop">
+    <button>close</button>
+  </form>
+</dialog>
+
      </main>
 
     
